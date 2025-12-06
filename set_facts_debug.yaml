@@ -1,0 +1,25 @@
+---
+- name: Example playbook to set facts and show debug messages
+  hosts: localhost
+  gather_facts: false
+
+  tasks:
+
+    - name: Set custom facts
+      set_fact:
+        maintenance_mode: false
+
+    - name: Debug: show application name
+      debug:
+        msg: "Application name is: {{ app_name }}"
+
+    - name: Debug: show full facts in structured output
+      debug:
+        var: app_version
+
+    - name: Debug: maintenance mode status
+      debug:
+        msg: >
+          Maintenance mode is {{
+            'enabled' if maintenance_mode | bool else 'disabled'
+          }}
