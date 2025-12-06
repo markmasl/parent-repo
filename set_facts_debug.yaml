@@ -1,7 +1,7 @@
 ---
 - name: Example playbook to set facts and show debug messages
   hosts: localhost
-  gather_facts: false
+  gather_facts: true
 
   tasks:
 

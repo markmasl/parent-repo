@@ -1,0 +1,3 @@
+[submodule "vars"]
+	path = vars
+	url = https://github.com/markmasl/submodule-repo.git
