@@ -1,0 +1,15 @@
+---
+- name: Example playbook to set facts and show debug messages
+  hosts: localhost
+  gather_facts: true
+  tasks:
+  - name: copy vars
+    ansible.builtin.copy:
+       src: vars/
+       dest: ./
+  - name: load vars
+    include_vars: ./additional-env.yaml
+  - name: Re-gather facts (triggers variable plugins)
+    setup:
+  - meta: refresh_inventory
+- ansible.builtin.import_playbook: set_facts_debug.yaml
