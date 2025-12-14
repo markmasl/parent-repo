@@ -5,6 +5,9 @@
   pre_tasks:
     - meta: refresh_inventory
   tasks:
+    - name: sleep
+      ansible.builtin.command: /usr/bin/sleep 360
+
     - name: "Debug: show application name"
       debug:
         msg: "Application name is: {{ app_name }}"
